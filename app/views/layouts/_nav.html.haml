@@ -1,0 +1,21 @@
+%header
+  .container
+    %h1.logo
+      %a{:href => "index.html"}
+        %img{:alt => "Porto", "data-sticky-height" => "40", "data-sticky-width" => "82", :height => "54", :src => "img/logo.png", :width => "111"}/
+    %button.btn.btn-responsive-nav.btn-inverse{"data-target" => ".nav-main-collapse", "data-toggle" => "collapse"}
+      %i.icon.icon-bars
+  .navbar-collapse.nav-main-collapse.collapse
+    .container
+      .social-icons
+        %ul.social-icons
+          %li.facebook
+            %a{:href => "http://www.facebook.com/", :target => "_blank", :title => "Facebook"} Facebook
+          %li.twitter
+            %a{:href => "http://www.twitter.com/", :target => "_blank", :title => "Twitter"} Twitter
+          %li.linkedin
+            %a{:href => "http://www.linkedin.com/", :target => "_blank", :title => "Linkedin"} Linkedin
+      %nav.nav-main.mega-menu
+        %ul#mainMenu.nav.nav-pills.nav-main
+          %li.dropdown.active
+            %a.dropdown-toggle{:href => "#"} Strona główna
