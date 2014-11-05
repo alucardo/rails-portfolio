@@ -7,11 +7,19 @@
         .newsletter
           %h4 Newsletter
           %p Keep up on our always evolving product features and technology. Enter your e-mail and subscribe to our newsletter.
-          %form#newsletterForm{:action => "php/newsletter-subscribe.php", :method => "POST"}
+          %form{:method=>"POST", :action=>"https://www.benefiter.pl/save_user_form/", :target=>"_top" }
             .input-group
-              %input#email.form-control{:name => "email", :placeholder => "Email Address", :type => "text"}/
-              %span.input-group-btn
-                %button.btn.btn-default{:type => "submit"} Go!
+              %input{ :type=>"hidden", :name=>"aid", :value=>"19087"}    
+              %input#email.form-control.col-md-12{:name => "name", :placeholder => "Imię", :type => "text"}/
+            .input-group
+              %input#email.form-control.col-md-12{:name => "email", :placeholder => "Adres email", :type => "text"}/
+              %input{:name => "custom1", :type => "hidden", :value => ""}/
+              %input{:name => "custom2", :type => "hidden", :value => ""}/
+              %input{:name => "custom3", :type => "hidden", :value => ""}/
+              %input{:name => "custom4", :type => "hidden", :value => ""}/
+              %input{:name => "custom5", :type => "hidden", :value => ""}/
+            .input-group
+              %button.btn.btn-default{:type => "submit"} Zapisz!    
       .col-md-5
         .contact-details
           %h4 Kontakt
