@@ -1,0 +1,55 @@
+%footer#footer
+  .container
+    .row
+      .footer-ribon
+        %span= t('footer.header')
+      .col-md-4
+        .newsletter
+          %h4 Newsletter
+          %p Keep up on our always evolving product features and technology. Enter your e-mail and subscribe to our newsletter.
+          %form#newsletterForm{:action => "php/newsletter-subscribe.php", :method => "POST"}
+            .input-group
+              %input#email.form-control{:name => "email", :placeholder => "Email Address", :type => "text"}/
+              %span.input-group-btn
+                %button.btn.btn-default{:type => "submit"} Go!
+      .col-md-5
+        .contact-details
+          %h4 Kontakt
+          %ul.contact
+            %li
+              %p
+                %i.icon.icon-phone
+                %strong Telefon:
+                790 691 371
+            %li
+              %p
+                %i.icon.icon-envelope
+                %strong Email:
+                %a{:href => "mailto:mail@example.com"} przemek.4mm@gmail.com
+      .col-md-3
+        %h4= t('footer.follow')
+        .social-icons
+          %ul.social-icons
+            %li.facebook
+              %a{"data-placement" => "bottom", :href => "http://www.facebook.com/olesinski.przemyslaw", :rel => "tooltip", :target => "_blank", :title => "Facebook"} Facebook
+            %li.googleplus
+              %a{"data-placement" => "bottom", :href => "http://plus.google.com/+PrzemysławOlesiński/", :rel => "Google+", :target => "_blank", :title => "Google+"} Google +
+            %li.linkedin
+              %a{"data-placement" => "bottom", :href => "http://www.linkedin.com/in/przemyslawolesinski/", :rel => "tooltip", :target => "_blank", :title => "Linkedin"} Linkedin
+  .footer-copyright
+    .container
+      .row
+        .col-md-1
+          %a.logo{:href => "index.html"}
+            %img.img-responsive{:alt => "Porto Website Template", :src => "img/logo-footer.png"}/
+        .col-md-7
+          %p © Copyright 2014. Wszystkie prawa zastrzeżone.
+        .col-md-4
+          %nav#sub-menu
+            %ul
+              %li
+                = link_to "FAQ", "#"
+              %li
+                = link_to "Mapa Strony", "#"
+              %li
+                = link_to "Kontakt", "#"

@@ -28,4 +28,6 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'haml-rails'
+gem "figaro"
+gem "rolify"
 
