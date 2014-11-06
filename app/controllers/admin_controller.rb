@@ -1,7 +1,9 @@
 class AdminController < ApplicationController
 
 	before_action :authenticate_user!
-	before_action :check_permision
+	before_action :check_permision!
+
+	layout "admin"
 
 	def index
 	end

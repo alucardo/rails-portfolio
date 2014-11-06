@@ -1,0 +1,46 @@
+!!!
+%html{"data-ember-extension" => "1", :lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %link{:href => "favicon.ico", :rel => "icon"}/
+    %title Admin | Przemysław Olesiński
+    = stylesheet_link_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+    = stylesheet_link_tag "admin"
+    = javascript_include_tag "//code.jquery.com/jquery-1.11.1.min.js"
+    = javascript_include_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"
+    = javascript_include_tag "admin"
+  %body
+  %nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+    .container-fluid
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header
+        %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+      / Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          %li
+            = link_to "Admin", admin_root_path
+          %li 
+            = link_to "Projects", "#"
+          %li 
+            = link_to "Project tags", "#"
+          %li 
+            = link_to "Project categories", "#"
+          %li 
+            = link_to "Pages", "#" 
+          %li 
+            = link_to "News", "#"
+          %li 
+            = link_to "News tags", ""
+          %li 
+            = link_to "News category", ""
+
+  = yield

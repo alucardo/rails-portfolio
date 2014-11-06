@@ -11,7 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105064519) do
+ActiveRecord::Schema.define(version: 20141106201620) do
+
+  create_table "product_categories_products", id: false, force: true do |t|
+    t.integer "product_id",          null: false
+    t.integer "product_category_id", null: false
+  end
+
+  create_table "product_tags_products", id: false, force: true do |t|
+    t.integer "product_id",     null: false
+    t.integer "product_tag_id", null: false
+  end
+
+  create_table "project_categories", force: true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "project_tags", force: true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.string   "keywords"
+    t.string   "description"
+    t.text     "what_i_did"
+    t.text     "about"
+    t.text     "content"
+    t.string   "link"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"

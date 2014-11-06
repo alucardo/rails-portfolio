@@ -8,6 +8,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'frontend#index'
 
+  get "/admin", to: "admin#index", as: :admin_root
+
+
+  namespace :admin do 
+
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

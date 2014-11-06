@@ -10,12 +10,22 @@
       .social-icons
         %ul.social-icons
           %li.facebook
-            %a{:href => "http://www.facebook.com/", :target => "_blank", :title => "Facebook"} Facebook
-          %li.twitter
-            %a{:href => "http://www.twitter.com/", :target => "_blank", :title => "Twitter"} Twitter
+            %a{:href => "http://www.facebook.com/olesinski.przemyslaw", :target => "_blank", :title => "Facebook"} Facebook
+          %li.googleplus
+            %a{:href => "http://plus.google.com/+PrzemysławOlesiński/", :target => "_blank", :title => "Twitter"} Twitter
           %li.linkedin
-            %a{:href => "http://www.linkedin.com/", :target => "_blank", :title => "Linkedin"} Linkedin
+            %a{:href => "http://www.linkedin.com/in/przemyslawolesinski/", :target => "_blank", :title => "Linkedin"} Linkedin
       %nav.nav-main.mega-menu
         %ul#mainMenu.nav.nav-pills.nav-main
-          %li.dropdown.active
-            %a.dropdown-toggle{:href => "#"} Strona główna
+          %li.active
+            = link_to "Strona główna", root_path
+          %li
+            = link_to "O mnie", "#"
+          %li
+            = link_to "Projekty", "#"
+          %li
+            = link_to "Open Source", ""
+          %li
+            = link_to "Blog"
+          %li
+            = link_to "Kontakt"
