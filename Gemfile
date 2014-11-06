@@ -30,4 +30,12 @@ gem 'devise'
 gem 'haml-rails'
 gem "figaro"
 gem "rolify"
+gem 'will_paginate', '~> 3.0'
+gem 'friendly_id', '~> 5.0.0'
+gem 'simple_form'
+
+
+group :development do 
+  gem 'pry'
+end
 

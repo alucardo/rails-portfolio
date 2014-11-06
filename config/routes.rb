@@ -12,7 +12,13 @@ Rails.application.routes.draw do
 
 
   namespace :admin do 
-
+    resources :projects
+    resources :project_tags
+    resources :project_categories
+    resources :pages
+    resources :news
+    resources :news_tags
+    resources :news_categories
   end
 
   # Example of regular route:
