@@ -13,6 +13,7 @@
     = javascript_include_tag "//code.jquery.com/jquery-1.11.1.min.js"
     = javascript_include_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"
     = javascript_include_tag "admin"
+    = csrf_meta_tags
   %body
     %nav.navbar.navbar-inverse{:role => "navigation"}
       .container-fluid
@@ -42,6 +43,9 @@
               = link_to "News tags", admin_news_tags_path
             %li 
               = link_to "News category", admin_news_categories_path
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              = link_to "Wyloguj", destroy_user_session_path, method: :delete
     .clearfix
     .container
       = yield
