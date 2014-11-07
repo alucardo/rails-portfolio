@@ -1,0 +1,17 @@
+= link_to "Dodaj kategorie projektu", new_admin_project_category_path, class: "btn btn-success"
+
+%table.table
+  %thead
+    %tr
+      %th Nazwa
+      %th Link
+      %th
+  %tbody
+    - @project_categories.each do |pt|
+      %tr
+        %td= pt.name
+        %td= pt.slug
+        %td{style: "width: 200px;"}
+          -link_to raw(t('buttons.show_icon')), admin_project_category_path(pt), class: 'btn btn-default'
+          =link_to raw(t('buttons.edit_icon')), edit_admin_project_category_path(pt), class: 'btn btn-success'
+          =link_to raw(t('buttons.delete_icon')), admin_project_category_path(pt), method: :delete, data: { confirm: t('destroy.category') }, class: 'btn btn-danger'
