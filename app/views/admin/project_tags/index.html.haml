@@ -1,0 +1,17 @@
+= link_to "Dodaj projekt tag", new_admin_project_tag_path, class: "btn btn-success"
+
+%table.table
+  %thead
+    %tr
+      %th Nazwa
+      %th Link
+      %th
+  %tbody
+    - @project_tags.each do |pt|
+      %tr
+        %td= pt.name
+        %td= pt.slug
+        %td{style: "width: 200px;"}
+          -link_to raw(t('buttons.show_icon')), admin_project_tag_path(pt), class: 'btn btn-default'
+          =link_to raw(t('buttons.edit_icon')), edit_admin_project_tag_path(pt), class: 'btn btn-success'
+          =link_to raw(t('buttons.delete_icon')), admin_project_tag_path(pt), method: :delete, data: { confirm: t('destroy.tag') }, class: 'btn btn-danger'
