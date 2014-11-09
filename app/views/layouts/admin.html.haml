@@ -30,17 +30,19 @@
             %li
               = link_to "Admin", admin_root_path
             %li 
-              = link_to "Projects", admin_projects_path
+              = link_to "Projekty", admin_projects_path
             %li 
-              = link_to "Project tags", admin_project_tags_path
+              = link_to "Tagi", admin_project_tags_path
             %li 
-              = link_to "Project categories", admin_project_categories_path
+              = link_to "Kategorie projektów", admin_project_categories_path
             %li 
-              = link_to "Pages", admin_pages_path
+              = link_to "Strony", admin_pages_path
             %li 
-              = link_to "News", admin_posts_path
+              = link_to "Posty", admin_posts_path
             %li 
-              = link_to "News category", admin_post_categories_path
+              = link_to "Kategorie postów", admin_post_categories_path
+            %li 
+              = link_to "Opinie", admin_opinions_path
           %ul.nav.navbar-nav.navbar-right
             %li
               = link_to "Wyloguj", destroy_user_session_path, method: :delete

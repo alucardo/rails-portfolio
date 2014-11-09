@@ -1,0 +1,20 @@
+= simple_form_for [:admin, @opinion], :html => {class: "form-horizontal"} do |f|
+  .form-group
+    = f.label :content, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :content, label: false, class: "form-control"
+  .form-group
+    = f.label :stars, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :stars, label: false, class: "form-control"
+  .form-group
+    = f.label :job, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :job, label: false, class: "form-control"
+  .form-group
+    = f.label :hr, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :hr, label: false, class: "form-control"
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.button :submit, "Zapisz" , class: "btn btn-default"

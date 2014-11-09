@@ -1,0 +1,18 @@
+= link_to "Dodaj posta", new_admin_post_path, class: "btn btn-success"
+
+
+%table.table
+  %thead
+    %tr
+      %th Nazwa
+      %th Link
+      %th
+  %tbody
+    - @posts.each do |pt|
+      %tr
+        %td= pt.title
+        %td= pt.slug
+        %td{style: "width: 200px;"}
+          -link_to raw(t('buttons.show_icon')), admin_post_path(pt), class: 'btn btn-default'
+          =link_to raw(t('buttons.edit_icon')), edit_admin_post_path(pt), class: 'btn btn-success'
+          =link_to raw(t('buttons.delete_icon')), admin_post_path(pt), method: :delete, data: { confirm: t('destroy.post') }, class: 'btn btn-danger'

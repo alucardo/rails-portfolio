@@ -1,0 +1,15 @@
+= link_to "Dodaj opinie", new_admin_opinion_path, class: "btn btn-success"
+
+%table.table
+  %thead
+    %tr
+      %th Projekt
+      %th
+  %tbody
+    - @opinions.each do |pt|
+      %tr
+        %td= pt.job
+        %td{style: "width: 200px;"}
+          -link_to raw(t('buttons.show_icon')), admin_opinion_path(pt), class: 'btn btn-default'
+          =link_to raw(t('buttons.edit_icon')), edit_admin_opinion_path(pt), class: 'btn btn-success'
+          =link_to raw(t('buttons.delete_icon')), admin_opinion_path(pt), method: :delete, data: { confirm: t('destroy.opinion') }, class: 'btn btn-danger'

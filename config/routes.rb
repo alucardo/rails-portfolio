@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :post_categories
     resources :pages
+    resources :opinions
   end
 
   # Example of regular route:
