@@ -39,6 +39,16 @@
     %label.col-sm-2.control-label Tagi
     .col-sm-10
       = f.association :project_tags , label: false, input_html: {class: "select2", style: "width: 100%;"}
+  .col-sm-offset-2.col-sm-10
+    .checkbox
+      %label
+        = f.input_field :open_source, label: false
+        Open Source
+  .col-sm-offset-2.col-sm-10
+    .checkbox
+      %label
+        = f.input_field :startup, label: false
+        StartUp
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.button :submit, "Zapisz" , class: "btn btn-default"

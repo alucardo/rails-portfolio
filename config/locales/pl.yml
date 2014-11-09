@@ -21,6 +21,7 @@ pl:
     category: "Czy na pewno usunąć kategorie?"
     project: "Czy na pewno usunąć projekt?"
     page: "Czy na pewno usunąć stonę?"
+    post: "Czy na pewno usunąć post?"
   date:
     abbr_day_names:
     - nie

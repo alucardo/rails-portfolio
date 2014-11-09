@@ -38,11 +38,9 @@
             %li 
               = link_to "Pages", admin_pages_path
             %li 
-              = link_to "News", admin_news_index_path
+              = link_to "News", admin_posts_path
             %li 
-              = link_to "News tags", admin_news_tags_path
-            %li 
-              = link_to "News category", admin_news_categories_path
+              = link_to "News category", admin_post_categories_path
           %ul.nav.navbar-nav.navbar-right
             %li
               = link_to "Wyloguj", destroy_user_session_path, method: :delete

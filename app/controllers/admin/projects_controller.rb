@@ -50,7 +50,7 @@ class Admin::ProjectsController < AdminController
   end
 
   def project_params
-    params.require(:project).permit(:title, :keywords, :description, :what_i_did, :about, :content, :link, :image, project_category_ids: [], project_tag_ids: [])
+    params.require(:project).permit(:title, :keywords, :description, :what_i_did, :about, :content, :link, :image, :startup, :open_source, project_category_ids: [], project_tag_ids: [])
   end
 
 end

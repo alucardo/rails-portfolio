@@ -15,10 +15,8 @@ Rails.application.routes.draw do
     resources :projects
     resources :project_tags
     resources :project_categories
-    resources :pages
-    resources :news
-    resources :news_tags
-    resources :news_categories
+    resources :posts
+    resources :post_categories
     resources :pages
   end
 
