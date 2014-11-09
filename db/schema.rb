@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106201620) do
-
-  create_table "product_categories_products", id: false, force: true do |t|
-    t.integer "product_id",          null: false
-    t.integer "product_category_id", null: false
-  end
-
-  create_table "product_tags_products", id: false, force: true do |t|
-    t.integer "product_id",     null: false
-    t.integer "product_tag_id", null: false
-  end
+ActiveRecord::Schema.define(version: 20141109123037) do
 
   create_table "project_categories", force: true do |t|
     t.string   "name"
@@ -30,11 +20,21 @@ ActiveRecord::Schema.define(version: 20141106201620) do
     t.datetime "updated_at"
   end
 
+  create_table "project_categories_projects", force: true do |t|
+    t.integer "project_category_id"
+    t.integer "project_id"
+  end
+
   create_table "project_tags", force: true do |t|
     t.string   "name"
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "project_tags_projects", force: true do |t|
+    t.integer "project_tag_id"
+    t.integer "project_id"
   end
 
   create_table "projects", force: true do |t|

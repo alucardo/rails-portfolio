@@ -19,6 +19,7 @@ pl:
   destroy:
     tag: "Czy na pewno usunąć tag?"
     category: "Czy na pewno usunąć kategorie?"
+    project: "Czy na pewno usunąć projekt?"
   date:
     abbr_day_names:
     - nie

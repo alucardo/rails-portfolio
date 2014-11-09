@@ -27,7 +27,7 @@ class Admin::ProjectCategoriesController < AdminController
 
   def update
     if @category.update_attributes(category_params)
-      redirect_to admin_project_categors_path, notice: "Kategoria zapisany"
+      redirect_to admin_project_categories_path, notice: "Kategoria zapisany"
     else
       render action: "edit"
     end
@@ -44,11 +44,11 @@ class Admin::ProjectCategoriesController < AdminController
   protected
 
   def set_category
-    @categor = ProjectCategory.friendly.find(params[:id])  
+    @category = ProjectCategory.friendly.find(params[:id])  
   end
 
   def category_params
-    params.require(:project_category).permit(:name)
+    params.require(:project_category).permit(:name, :slug)
   end
 
 end

@@ -1,0 +1,44 @@
+= simple_form_for [:admin, @project], :html => {class: "form-horizontal"} do |f|
+  .form-group
+    = f.label :title, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :title, label: false, class: "form-control"
+  .form-group
+    = f.label :keywords, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :keywords, label: false, class: "form-control"
+  .form-group
+    = f.label :description, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :description, label: false, class: "form-control"
+  .form-group
+    = f.label :what_i_did, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :what_i_did, label: false, class: "form-control"
+  .form-group
+    = f.label :about, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :about, label: false, class: "form-control"
+  .form-group
+    = f.label :content, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :content, label: false, class: "form-control"
+  .form-group
+    = f.label :link, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :link, label: false, class: "form-control"
+  .form-group
+    = f.label :image , class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :image , label: false, class: "form-control"
+  .form-group
+    %label.col-sm-2.control-label Kategorie 
+    .col-sm-10
+      = f.association :project_categories , label: false, input_html: {class: "select2", style: "width: 100%;"}
+  .form-group
+    %label.col-sm-2.control-label Tagi
+    .col-sm-10
+      = f.association :project_tags , label: false, input_html: {class: "select2", style: "width: 100%;"}
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.button :submit, "Zapisz" , class: "btn btn-default"
