@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require select2
+//= noty-config
 //= require_tree .

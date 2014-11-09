@@ -1,0 +1,10 @@
+<% if notice.present? %>
+    <script>
+        noty({text: "<%= notice %>", timeout: 3000, layout: 'bottom', type: 'success'});
+    </script>
+<% end %>
+<% if alert.present? %>
+    <script>
+        noty({text: "<%= alert %>", timeout: 3000, layout: 'bottom', type: 'error'});
+    </script>
+<% end %>

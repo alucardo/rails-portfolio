@@ -23,6 +23,11 @@ pl:
     page: "Czy na pewno usunąć stonę?"
     post: "Czy na pewno usunąć post?"
     opinion: "Czy na pewno usunąć opinie?"
+  activerecord:
+    attributes:
+      contact:
+        name: "Pole imię"
+        email: "Pole email"
   date:
     abbr_day_names:
     - nie

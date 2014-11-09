@@ -1,0 +1,59 @@
+.main
+  %section.page-top
+    .container
+      .row
+        .col-md-12
+          %ul.breadcrumb
+            %li
+              %a{:href => "#"} Strona główna
+            %li.active Kontakt
+      .row
+        .col-md-12
+          %h2 Kontakt
+  .container
+    .row
+      .col-md-6
+        #contact-sent.offset-anchor
+        = simple_form_for @contact, url: send_contact_path, id: "contactFormAdvanced" do |f|
+          .row
+            .form-group
+              .col-md-6
+                %label Twoje imię *
+                = f.input_field :name, label: false, placeholder: "Prosze podać imię.", class: "form-control"
+              .col-md-6
+                %label Twój adres email *
+                = f.input_field :email, label: false, placeholder: "Prosze podać e-mail.", class: "form-control"
+          .row
+            .form-group
+              .col-md-12
+                %label Wiadomość *
+                = f.input_field :content, label: false, placeholder: "Prosze podać imię.", class: "form-control", id: "message", :rows => "10"
+          .row
+            .col-md-12
+              %hr/
+          .row
+            .col-md-12
+              = f.submit "Wyślij wiadomość", class: "btn btn-primary btn-lg pull-right"
+      .col-md-6
+        %h4.push-top
+          Bądź w 
+          %strong kontakcie
+        %p Jeśli Cię zaciekawiłem lub masz jakieś pytania nie czekaj. Zkontaktuj się zemną już dzisiaj
+        %hr/
+        %h4
+          Dane
+          %strong Kontaktowe
+        %ul.list-unstyled
+          %li
+            %i.icon.icon-phone
+            %strong Telefon:
+            790 691 371
+          %li
+            %i.icon.icon-envelope
+            %strong E-mail:
+            przemek.4mm@gmail.com
+
+        %hr/
+-if @contact.errors.present?
+  :javascript
+    noty({text: '#{@contact.errors.full_messages.join(', ')}', layout: 'bottom', type: 'error'});

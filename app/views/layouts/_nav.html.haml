@@ -17,7 +17,7 @@
             %a{:href => "http://www.linkedin.com/in/przemyslawolesinski/", :target => "_blank", :title => "Linkedin"} Linkedin
       %nav.nav-main.mega-menu
         %ul#mainMenu.nav.nav-pills.nav-main
-          %li.active
+          %li{:class => active_link_to(root_path)}
             = link_to "Strona główna", root_path
           %li
             = link_to "O mnie", "#"
@@ -29,5 +29,5 @@
             = link_to "Opinie"
           %li
             = link_to "Blog"
-          %li
-            = link_to "Kontakt"
+          %li{:class => active_link_to(contact_path)}
+            = link_to "Kontakt", contact_path

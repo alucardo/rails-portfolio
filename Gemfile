@@ -35,6 +35,7 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'simple_form'
 gem 'carrierwave'
 gem "select2-rails"
+gem 'noty-rails'
 
 group :development do 
   gem 'pry'
