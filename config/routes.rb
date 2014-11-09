@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get "/contact", to: "frontend#contact", as: :contact
   post "/contact", to: "frontend#send_contact", as: :send_contact
-
+  resources :projects, only: [:index, :show]
+  resources :posts, only: [:index, :show]
+  resources :opinions, only: [:index, :show]
 
 end
