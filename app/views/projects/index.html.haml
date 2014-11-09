@@ -1,0 +1,36 @@
+.main
+  %section.page-top
+    .container
+      .row
+        .col-md-12
+          %ul.breadcrumb
+            %li
+              %a{:href => "/"} Strona główna
+            %li.active Projekty
+      .row
+        .col-md-12
+          %h2 Wybrane projekty
+  .sort-source-wrapper
+    .container
+      %ul.nav.nav-pills.sort-source.secundary.pull-right{"data-option-key" => "filter", "data-sort-id" => "portfolio"}
+        %li.active{"data-option-value" => "*"}
+          %a{:href => "#"} Wszystkie
+        %li{"data-option-value" => ".web-develop"}
+          %a{:href => "#"} Web Develop
+        %li{"data-option-value" => ".web-design"}
+          %a{:href => "#"} Web Design
+  %ul.portfolio-list.sort-destination.full-width.isotope{"data-sort-id" => "portfolio", :style => "position: relative; overflow: hidden; height: 754px;"}
+    - @projects.each do |p|
+      %li.isotope-item.websites{:style => "position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);"}
+        .portfolio-item.img-thumbnail
+          %a.thumb-info.secundary{:href => "portfolio-single-project.html"}
+            = image_tag p.image, class: "img-responsive"
+            %span.thumb-info-title
+              %span.thumb-info-inner SEO
+              %span.thumb-info-type Website
+            %span.thumb-info-action
+              %span.thumb-info-action-icon{:href => "#", :title => "Universal"}
+                %i.icon.icon-link
+    
+:javascript
+      

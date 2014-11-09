@@ -30,6 +30,9 @@
   .form-group
     = f.label :image , class: "col-sm-2 control-label"
     .col-sm-10
+      - if @project.id.present?
+        = image_tag @project.image
+        = @project.image
       = f.input_field :image , label: false, class: "form-control"
   .form-group
     %label.col-sm-2.control-label Kategorie 
