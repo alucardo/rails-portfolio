@@ -1,0 +1,17 @@
+= link_to "Dodaj stronę", new_admin_page_path, class: "btn btn-success"
+
+%table.table
+  %thead
+    %tr
+      %th Nazwa
+      %th Link
+      %th
+  %tbody
+    - @pages.each do |pt|
+      %tr
+        %td= pt.title
+        %td= pt.slug
+        %td{style: "width: 200px;"}
+          -link_to raw(t('buttons.show_icon')), admin_page_path(pt), class: 'btn btn-default'
+          =link_to raw(t('buttons.edit_icon')), edit_admin_page_path(pt), class: 'btn btn-success'
+          =link_to raw(t('buttons.delete_icon')), admin_page_path(pt), method: :delete, data: { confirm: t('destroy.page') }, class: 'btn btn-danger'

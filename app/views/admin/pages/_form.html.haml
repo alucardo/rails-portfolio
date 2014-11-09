@@ -1,0 +1,25 @@
+= simple_form_for [:admin, @page], :html => {class: "form-horizontal"} do |f|
+  .form-group
+    = f.label :title, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :title, label: false, class: "form-control"
+  - if @page.id.present?
+    .form-group
+      = f.label :slug, class: "col-sm-2 control-label"
+      .col-sm-10
+        = f.input_field :slug, label: false, class: "form-control"
+  .form-group
+    = f.label :description, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :description, label: false, class: "form-control"
+  .form-group
+    = f.label :keywords, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :keywords, label: false, class: "form-control"
+  .form-group
+    = f.label :content, class: "col-sm-2 control-label"
+    .col-sm-10
+      = f.input_field :content, label: false, class: "form-control"
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.button :submit, "Zapisz" , class: "btn btn-default"

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :news
     resources :news_tags
     resources :news_categories
+    resources :pages
   end
 
   # Example of regular route:

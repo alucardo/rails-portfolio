@@ -13,7 +13,7 @@ class Admin::ProjectCategoriesController < AdminController
   end
 
   def create
-     @category = ProjectCategory.new(category_params)
+    @category = ProjectCategory.new(category_params)
     if @category.save
       redirect_to admin_project_categories_path, notice: "Dodano kategorie"
     else
