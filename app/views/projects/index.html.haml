@@ -22,7 +22,7 @@
     - @projects.each do |p|
       %li{:style => "position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);", class: "isotope-item #{ p.project_categories.map(&:slug).join(' ') }"}
         .portfolio-item.img-thumbnail
-          %a.thumb-info.secundary{:href => "portfolio-single-project.html"}
+          = link_to project_path(p), class: "thumb-info secundary" do
             = image_tag p.image, class: "img-responsive"
             %span.thumb-info-title
               %span.thumb-info-inner Więcej informacji

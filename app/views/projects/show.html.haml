@@ -1,0 +1,79 @@
+.main
+  %section.page-top
+    .container
+      .row
+        .col-md-12
+          %ul.breadcrumb
+            %li
+              %a{:href => "/"} Strona główna
+            %li
+              = link_to "Projekty", projects_path
+            %li.active= @project.title
+      .row
+        .col-md-12
+          %h2= @project.title
+  .container
+    .portfolio-title
+      .row
+        .portfolio-nav-all.col-md-1
+          %a{"data-original-title" => "Back to list", :href => "#{projects_path}", :rel => "tooltip"}
+            %i.icon.icon-th
+        .col-md-10.center
+          %h2.shorter= @project.title
+    %hr.tall
+    .row
+      .col-md-4
+        .owl-carousel.owl-theme.owl-carousel-init{"data-plugin-options" => "{\"items\": 1, \"autoHeight\": true}", :style => "display: block; opacity: 1;"}
+          .owl-wrapper-outer.autoHeight{:style => "height: 376px;"}
+            .owl-wrapper{:style => "width: 2160px; left: 0px; display: block;"}
+              .owl-item{:style => "width: 360px;"}
+                %div
+                  .thumbnail
+                    = image_tag @project.image, class: "img-responsive"
+      .col-md-8
+        / .portfolio-info
+        /   .row
+        /     .col-md-12.center
+        /       %ul
+        /         %li
+        /           %a{"data-original-title" => "Like", :href => "#", :rel => "tooltip"}
+        /             %i.icon.icon-heart>
+        /             14
+        /         %li
+        /           %i.icon.icon-calendar
+        /           21 November 2013
+        /         %li
+        /           %i.icon.icon-tags
+        /           = succeed "," do
+        /             %a{:href => "#"} Brand
+        /           %a{:href => "#"} Design
+        %h4
+          Opis
+          %strong Projektu
+        %p.taller= @project.about
+        - if @project.link.length > 5
+          %a.btn.btn-primary.btn-icon{:href => "#{@project.link}", target: "_blank"}
+            %i.icon.icon-external-link>
+            Online
+          %span.arrow.hlb.appear-animation.rotateInUpLeft.appear-animation-visible{"data-appear-animation" => "rotateInUpLeft", "data-appear-animation-delay" => "800", :style => "-webkit-animation: 800ms;"}
+        %ul.portfolio-details
+          %li
+            %p
+              %strong Tagi:
+            %ul.list.list-skills.icons.list-unstyled.list-inline
+              - @project.project_tags.each do |t|
+                %li
+                  = t.name
+    %hr.tall
+    .row
+      .col-md-6
+        %h4
+          Co 
+          %strong Zrobiłem
+        = raw @project.what_i_did
+      .col-md-6
+        %h4
+          Więcej
+          %strong Informacji
+        = raw @project.content
+
