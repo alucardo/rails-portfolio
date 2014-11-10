@@ -10,4 +10,34 @@
       .row
         .col-md-12
           %h2 Wiadomości
-  %hr.til
+  .container
+    .row      
+      .col-md-9
+        .blog-posts
+          - @posts.each do |p|
+            %article.post.post-medium
+              .row
+                .col-md-5
+                  .post-image
+                    .owl-carousel.owl-theme.owl-carousel-init{"data-plugin-options" => "{\"items\":1}", :style => "display: block; opacity: 1;"}
+                      .owl-wrapper-outer
+                        .owl-wrapper{:style => "width: 1344px; left: 0px; display: block;"}
+                          .owl-item{:style => "width: 336px;"}
+                            %div
+                              .img-thumbnail
+                                = image_tag p.image, class: "img-responsive" 
+                .col-md-7
+                  .post-content
+                    %h2
+                      = link_to p.title, post_path(p)
+                    = truncate(p.content, length: 400, separator: ' ', escape: false)
+              .row
+                .col-md-12
+                  .post-meta
+                    %span
+                      %i.icon.icon-calendar
+                      = l p.created_at, :format => :long
+                    = link_to "Czytaj więcej", post_path(p), class: "btn btn-xs btn-primary pull-right" 
+
+        = will_paginate @posts
+           

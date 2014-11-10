@@ -1,0 +1,33 @@
+.main
+  %section.page-top
+    .container
+      .row
+        .col-md-12
+          %ul.breadcrumb
+            %li
+              %a{:href => "/"} Strona główna
+            %li
+              = link_to "Wiadomości", posts_path
+            %li.active= @post.title
+      .row
+        .col-md-12
+          %h2= @post.title
+  .container
+    .row
+      .col-md-12
+        .blog-posts.single-post
+          %article.post.post-large.blog-single-post
+            .post-image
+              .owl-carousel.owl-theme.owl-carousel-init{"data-plugin-options" => "{\"items\":1}", :style => "display: block; opacity: 1;"}
+                .owl-wrapper-outer
+                  .owl-wrapper{:style => "width: 3392px; left: 0px; display: block;"}
+                    .owl-item{:style => "width: 848px;"}
+                      %div
+                        .img-thumbnail
+                          = image_tag @post.image, class: "img-responsive"
+            .post-content
+              %hr.tell
+              %h2= @post.title
+              = raw @post.content
+             
+            

@@ -27,7 +27,7 @@
           /   = link_to "Open Source", ""
           %li{:class => active_link_to(opinions_path)}
             = link_to "Opinie", opinions_path
-          %li
-            = link_to "Blog"
+          %li{:class => active_link_to(posts_path)}
+            = link_to "Blog", posts_path
           %li{:class => active_link_to(contact_path)}
             = link_to "Kontakt", contact_path

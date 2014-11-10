@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20141109184958) do
     t.string   "slug"
     t.string   "description"
     t.string   "keywords"
-    t.string   "content"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"

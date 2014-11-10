@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :slug
       t.string :description
       t.string :keywords
-      t.string :content
+      t.text :content
 
       t.timestamps
     end
