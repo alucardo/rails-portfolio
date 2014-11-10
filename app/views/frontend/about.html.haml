@@ -1,0 +1,67 @@
+.main
+  %section.page-top
+    .container
+      .row
+        .col-md-12
+          %ul.breadcrumb
+            %li
+              %a{:href => "/"} Strona główna
+            %li.active O mnie
+      .row
+        .col-md-12
+          %h2 O mnie
+  .container
+    .row
+      .col-md-4
+        .owl-carousel.owl-theme.owl-carousel-init{"data-plugin-options" => "{\"items\": 1, \"transitionStyle\": \"fade\"}", :style => "display: block; opacity: 1;"}
+          .owl-wrapper-outer
+            .owl-wrapper{:style => "width: 1440px; left: 0px; display: block;"}
+              .owl-item
+                %div
+                  .thumbnail{style: "max-width: 300px;"}
+                    %img.img-responsive{:alt => "", :src => "http://www.gravatar.com/avatar/c9872d0aed9ff21b0ace5bd9d1e06457.jpg?s=300"}                
+
+      .col-md-8
+        %h2.shorter
+          Przemysław
+          %strong Olesiński
+        %h4 Programista
+        %span.thumb-info-social-icons
+          %a{"data-original-title" => "Facebook", "data-placement" => "bottom", :href => "https://www.facebook.com/olesinski.przemyslaw", :rel => "tooltip", :target => "_blank"}
+            %i.icon.icon-facebook
+            %span Facebook
+          %a{"data-original-title" => "Linkedin", "data-placement" => "bottom", :href => "http://www.linkedin.com/in/przemyslawolesinski/", :rel => "tooltip"}
+            %i.icon.icon-linkedin
+            %span Linkedin
+        %p Witam serdecznie na mojej stronie. Mam na imię Przemysław Olesiński i od 2005 roku zajmuje się projektowaniem stron www.
+        %p Swoją przygodę z programowaniem zaczynałem od prostych stron HTML opartych na tabelkach by obecnie korzystać z takich technologii jak Ruby on Rail czy AngularJS.
+        %p Obecnie najbardziej znane mi technologie to:
+        %ul.list.icons.list-unstyled 
+          %li
+            %i.icon.icon-check
+            Ruby / Ruby on Rails / Sinatra / Spree
+          %li
+            %i.icon.icon-check
+            HTML5 / CSS3 / HAML / SASS 
+          %li
+            %i.icon.icon-check
+            Twitter Bootstrap / Zurb Foundation
+          %li
+            %i.icon.icon-check
+            PHP / Laravel / Wordpress / Magento
+          %li
+            %i.icon.icon-check
+            JavaScript / jQuery / AngularJs / EmberJs /CoffeScript
+          %li
+            %i.icon.icon-check
+            MySql / PostgreSQL
+          %li
+            %i.icon.icon-check
+            Gimp / Photoshop
+          %li
+            %i.icon.icon-check
+            Git
+          %li
+            %i.icon.icon-check
+            Wiele innych ...
+    %hr.tall/

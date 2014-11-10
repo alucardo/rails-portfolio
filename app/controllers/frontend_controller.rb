@@ -15,6 +15,9 @@ class FrontendController < ApplicationController
     end
   end
 
+  def about
+  end
+
   protected 
 
   def contact_params
