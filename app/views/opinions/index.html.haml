@@ -1,0 +1,32 @@
+.main
+  %section.page-top
+    .container
+      .row
+        .col-md-12
+          %ul.breadcrumb
+            %li
+              %a{:href => "/"} Strona główna
+            %li.active Opinie
+      .row
+        .col-md-12
+          %h2 Wybrane opinie
+  %hr.tall
+  .opinions.container
+    - @opinions.each do |o|
+      .col-md-6
+        .well
+          %blockquote
+            = o.content
+          %br
+          %strong.pull-right= o.job
+          %p &nbsp;
+
+- content_for :js do
+  :javascript
+    jQuery( document ).ready(function() {
+        var heights = $(".well").map(function() {
+        return $(this).height();
+        }).get(),
+        maxHeight = Math.max.apply(null, heights);
+        $(" .well").height(maxHeight);
+    });
