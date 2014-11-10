@@ -1,5 +1,7 @@
 class FrontendController < ApplicationController
   def index
+    @posts = Post.all.limit(4)
+    @opinions  = Opinion.all.limit(2)
   end
 
   def contact

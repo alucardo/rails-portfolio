@@ -170,71 +170,19 @@
                       <div class="row">
                         <div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
                           <div>
-                            <div class="col-md-6">
-                              <article>
-                                <div class="date">
-                                  <span class="day">15</span>
-                                  <span class="month">Jan</span>
-                                </div>
-                                <h4><a href="blog-post.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero. <a href="/" class="read-more">read more <i class="icon icon-angle-right"></i></a></p>
-                              </article>
-                            </div>
-                            <div class="col-md-6">
-                              <article>
-                                <div class="date">
-                                  <span class="day">15</span>
-                                  <span class="month">Jan</span>
-                                </div>
-                                <h4><a href="blog-post.html">Lorem ipsum dolor</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat. <a href="/" class="read-more">read more <i class="icon icon-angle-right"></i></a></p>
-                              </article>
-                            </div>
-                          </div>
-                          <div>
-                            <div class="col-md-6">
-                              <article>
-                                <div class="date">
-                                  <span class="day">12</span>
-                                  <span class="month">Jan</span>
-                                </div>
-                                <h4><a href="blog-post.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero. <a href="/" class="read-more">read more <i class="icon icon-angle-right"></i></a></p>
-                              </article>
-                            </div>
-                            <div class="col-md-6">
-                              <article>
-                                <div class="date">
-                                  <span class="day">11</span>
-                                  <span class="month">Jan</span>
-                                </div>
-                                <h4><a href="blog-post.html">Lorem ipsum dolor</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="/" class="read-more">read more <i class="icon icon-angle-right"></i></a></p>
-                              </article>
-                            </div>
-                          </div>
-                          <div>
-                            <div class="col-md-6">
-                              <article>
-                                <div class="date">
-                                  <span class="day">15</span>
-                                  <span class="month">Jan</span>
-                                </div>
-                                <h4><a href="blog-post.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero. <a href="/" class="read-more">read more <i class="icon icon-angle-right"></i></a></p>
-                              </article>
-                            </div>
-                            <div class="col-md-6">
-                              <article>
-                                <div class="date">
-                                  <span class="day">15</span>
-                                  <span class="month">Jan</span>
-                                </div>
-                                <h4><a href="blog-post.html">Lorem ipsum dolor</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat. <a href="/" class="read-more">read more <i class="icon icon-angle-right"></i></a></p>
-                              </article>
-                            </div>
-                          </div>
+                            <% @posts.each do |p| %>
+                              <div class="col-md-12">
+                                <article>
+                                  <div class="date">
+                                    <span class="day"><%= p.created_at.strftime('%d') %></span>
+                                    <span class="month"><%= p.created_at.strftime('%b') %></span>
+                                  </div>
+                                  <h4><%= link_to p.title, post_path(p) %></h4>
+                                  <p><%= truncate(p.content, length: 200, separator: ' ', escape: false) %> <a href="<%= post_path(p) %>" class="read-more">czytaj więcej <i class="icon icon-angle-right"></i></a></p>
+                                </article>
+                              </div>  
+                            <% end %>
+                          </div>                
                         </div>
                       </div>
                     </div>
@@ -243,22 +191,16 @@
                     <h2><strong>Opinie</strong> klientów</h2>
                     <div class="row">
                       <div class="owl-carousel push-bottom" data-plugin-options='{"items": 1, "autoHeight": true}'>
-                        <div>
-                          <div class="col-md-12">
-                            <blockquote class="testimonial">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat.  Donec hendrerit vehicula est, in consequat.  Donec hendrerit vehicula est, in consequat.</p>
-                            </blockquote>
-                          
+                        <% @opinions.each do |o| %>
+                          <div>
+                            <div class="col-md-12">
+                              <blockquote class="testimonial">
+                              <p><%= o.content %></p>
+                              </blockquote>                           
 
+                            </div>
                           </div>
-                        </div>
-                        <div>
-                          <div class="col-md-12">
-                            <blockquote class="testimonial">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </blockquote>                         
-                          </div>
-                        </div>
+                        <% end %>
                       </div>
                     </div>
                   </div>
