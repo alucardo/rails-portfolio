@@ -10,26 +10,24 @@
       .row
         .col-md-12
           %h2 Wybrane projekty
-  .sort-source-wrapper
-    .container
-      %ul.nav.nav-pills.sort-source.secundary.pull-right{"data-option-key" => "filter", "data-sort-id" => "portfolio"}
-        %li.active{"data-option-value" => "*"}
-          %a{:href => "#"} Wszystkie
-        - @categories.each do |c|
-          %li{"data-option-value" => ".#{c.slug}"}
-            %a{:href => "#"}= c.name
-  %ul.portfolio-list.sort-destination.full-width.isotope{"data-sort-id" => "portfolio", :style => "position: relative; overflow: hidden; height: 754px;"}
-    - @projects.each do |p|
-      %li{:style => "position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);", class: "isotope-item #{ p.project_categories.map(&:slug).join(' ') }"}
-        .portfolio-item.img-thumbnail
-          = link_to project_path(p), class: "thumb-info secundary" do
-            = image_tag p.image, class: "img-responsive"
-            %span.thumb-info-title
-              %span.thumb-info-inner Więcej informacji
-              / %span.thumb-info-type Website
-            %span.thumb-info-action
-              %span.thumb-info-action-icon{:href => "#", :title => "Universal"}
-                %i.icon.icon-link
-    
-:javascript
-      
+  .container
+    %ul.nav.nav-pills.sort-source{"data-option-key" => "filter", "data-sort-id" => "portfolio"}
+      %li.active{"data-option-value" => "*"}
+        %a{:href => "#"} Wszystkie
+      - @categories.each do |c|
+        %li{"data-option-value" => ".#{c.slug}"}
+          %a{:href => "#"}= c.name
+    %hr
+    .row
+      %ul.portfolio-list.sort-destination.isotope{"data-sort-id" => "portfolio", :style => "position: relative; overflow: hidden; height: 529px;"} 
+        - @projects.each do |p|
+          %li{:style => "position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);", class: "col-md-3 isotope-item #{ p.project_categories.map(&:slug).join(' ') }"}
+            .portfolio-item.img-thumbnail
+              = link_to project_path(p), class: "thumb-info" do
+                = image_tag p.image, class: "img-responsive"
+                %span.thumb-info-title
+                  %span.thumb-info-inner= p.title
+                  / %span.thumb-info-type Website
+                %span.thumb-info-action
+                  %span.thumb-info-action-icon{:href => "#", :title => "Universal"}
+                    %i.icon.icon-link
