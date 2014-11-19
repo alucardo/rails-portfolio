@@ -6,10 +6,9 @@
 
     <!-- Basic -->
     <meta charset="utf-8">
-    <title>Web Developer | Przemysław Olesiński</title>
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Porto - Responsive HTML5 Template - 2.9.0">
-    <meta name="author" content="okler.net">
+    <title><%= content_for?(:title) ? yield(:title) : "Web Developer | Przemysław Olesiński" %></title>
+    <meta name="keywords" content="<%= content_for?(:keywords) ? yield(:keywords) : "portfolio, web design, darmowe szkolenia" %>" />
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Web Developer | Przemysław Olesiński" %>">
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
