@@ -59,11 +59,11 @@
         %ul.portfolio-details
           %li
             %p
-              %strong Tagi:
+              %strong Technologie:
             %ul.list.list-skills.icons.list-unstyled.list-inline
               - @project.project_tags.each do |t|
                 %li
-                  = t.name
+                  = tag_to_img t.name
     %hr.tall
     .row
       .col-md-6
