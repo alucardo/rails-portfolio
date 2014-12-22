@@ -22,7 +22,6 @@ class ProjectTag < ActiveRecord::Base
         "Android" => "android.png",
         "Bootstrap" => "bootstrap.jpg",
         "Capistrano" => "capistrano.png",
-        "CoffyCcript" => "coffy.png",
         "Cucumber" => "cucumber.png",
         "D3.js" => "d3js-logo.jpg",
         "DigitalOcean" => "do.jpg",
@@ -36,7 +35,6 @@ class ProjectTag < ActiveRecord::Base
         "RSpec" => "rspec.jpg",
         "Ruby" => "ruby.png",
         "Sassu" => "sassu.jpg",
-        "Sinatra" => "sinatra.png",
         "Spree" => "spree.jpg",
         "Stripe" => "stripe.png"
     ]
