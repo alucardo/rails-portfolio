@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
 
   mount_uploader :image, ProjectPhotoUploader
-  default_scope { order('created_at ASC') }
+  default_scope { order('created_at DESC') }
 
   extend FriendlyId
   friendly_id :title, use: :slugged
