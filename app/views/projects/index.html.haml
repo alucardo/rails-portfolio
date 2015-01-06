@@ -19,7 +19,7 @@
           %a{:href => "#"}= c.name
       %li.break{style: "width: 100%;"}
         %hr
-        %p Kliknij ikonę technologie by zobaczyć wybrane projekty:
+        %p Kliknij ikonę technologii by zobaczyć wybrane projekty:
       - @tags.each do |c|
         - if c.projects.length > 0
           %li{"data-option-value" => ".#{c.slug}"}

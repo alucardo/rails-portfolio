@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
 
   mount_uploader :image, PostPhotoUploader
+
+  default_scope { order('created_at DESC') }
    
   extend FriendlyId
   friendly_id :title, use: :slugged
