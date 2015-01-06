@@ -15,7 +15,7 @@ class ProjectTag < ActiveRecord::Base
         "PayU" => "payu.jpg",
         "MySql" => "mysql.png",
         "PostgreSQL" => "postgresql.png",
-        "PayPal Api" => "paypal.jpeg",
+        "PayPal Api" => "paypal.jpg",
         "LinkedIn Api" => "linkedin.jpg", 
         "Google Maps Api" => "google-maps.png",
         "Amazon" => "amazon.jpg",
