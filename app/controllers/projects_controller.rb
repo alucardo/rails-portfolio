@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   def index 
     @projects = Project.all
     @categories = ProjectCategory.all
+    @tags = ProjectTag.all
   end
 
   

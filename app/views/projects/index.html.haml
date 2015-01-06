@@ -17,11 +17,17 @@
       - @categories.each do |c|
         %li{"data-option-value" => ".#{c.slug}"}
           %a{:href => "#"}= c.name
+      %li.break{style: "width: 100%;"}
+        %hr
+      - @tags.each do |c|
+        - if c.projects.length > 0
+          %li{"data-option-value" => ".#{c.slug}"}
+            %a{:href => "#"}= tag_to_img c.name
     %hr
     .row
       %ul.portfolio-list.sort-destination.isotope{"data-sort-id" => "portfolio", :style => "position: relative; overflow: hidden; height: 529px;"} 
         - @projects.each do |p|
-          %li{:style => "position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);", class: "col-md-3 isotope-item #{ p.project_categories.map(&:slug).join(' ') }"}
+          %li{:style => "position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);", class: "col-md-3 isotope-item #{ p.project_categories.map(&:slug).join(' ') } #{ p.project_tags.map(&:slug).join(' ') }"}
             .portfolio-item.img-thumbnail
               = link_to project_path(p), class: "thumb-info" do
                 = image_tag p.image, class: "img-responsive"
