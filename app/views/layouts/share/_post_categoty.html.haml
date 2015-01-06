@@ -1,0 +1,5 @@
+%h4 Kategorie
+%ul.nav.nav-list.primary.push-bottom
+  - PostCategory.all.each do |c|
+    %li
+      = link_to c.name, post_category_path(c)

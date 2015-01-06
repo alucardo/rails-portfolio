@@ -36,6 +36,8 @@ gem 'simple_form'
 gem 'carrierwave'
 gem "select2-rails"
 gem 'noty-rails'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'mini_magick'
 
 group :development do 
   gem 'pry'

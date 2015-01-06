@@ -17,17 +17,19 @@
     .col-sm-10
       = f.input_field :keywords, label: false, class: "form-control"
   .form-group
-    = f.label :content, class: "col-sm-2 control-label"
-    .col-sm-10
-      = f.input_field :content, label: false, class: "form-control"
-  .form-group
     = f.label :image, class: "col-sm-2 control-label"
     .col-sm-10
       = f.input_field :image, label: false, class: "form-control"
   .form-group
-    %label.col-sm-2.control-label Kategorie 
+    %label.col-sm-2.control-label Kategorie
     .col-sm-10
       = f.association :post_categories , label: false, input_html: {class: "select2", style: "width: 100%;"}
+  .form-group
+    = f.label :content, class: "col-sm-2 control-label"
+    .col-sm-10
+      -#= f.input_field :content, label: false, class: "form-control"
+      = f.input :content, :as => :ckeditor, label: false, :input_html => { :ckeditor => {:toolbar => 'Full'} }
+
 
   .form-group
     .col-sm-offset-2.col-sm-10

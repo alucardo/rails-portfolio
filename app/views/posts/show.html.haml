@@ -14,7 +14,7 @@
           %h2= @post.title
   .container
     .row
-      .col-md-12
+      .col-md-9
         .blog-posts.single-post
           %article.post.post-large.blog-single-post
             .post-image
@@ -29,5 +29,5 @@
               %hr.tell
               %h2= @post.title
               = raw @post.content
-             
-            
+      .col-sm-3
+        = render 'layouts/share/post_categoty'

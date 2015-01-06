@@ -11,7 +11,7 @@
         .col-md-12
           %h2 Wiadomości
   .container
-    .row      
+    .row
       .col-md-9
         .blog-posts
           - @posts.each do |p|
@@ -25,7 +25,7 @@
                           .owl-item{:style => "width: 336px;"}
                             %div
                               .img-thumbnail
-                                = image_tag p.image, class: "img-responsive" 
+                                = image_tag p.image, class: "img-responsive"
                 .col-md-7
                   .post-content
                     %h2
@@ -37,7 +37,7 @@
                     %span
                       %i.icon.icon-calendar
                       = l p.created_at, :format => :long
-                    = link_to "Czytaj więcej", post_path(p), class: "btn btn-xs btn-primary pull-right" 
+                    = link_to "Czytaj więcej", post_path(p), class: "btn btn-xs btn-primary pull-right"
 
         = will_paginate @posts
       .col-md-3

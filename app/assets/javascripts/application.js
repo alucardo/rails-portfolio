@@ -1,3 +1,3 @@
-
-//= noty-config
+//= require ckeditor/init
+//= require noty-config
 
