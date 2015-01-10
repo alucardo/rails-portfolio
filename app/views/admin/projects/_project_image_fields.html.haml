@@ -1,0 +1,8 @@
+.nested-fields.form-group
+  = f.label :foto, "link do zdjecia" , class: "col-sm-2 control-label"
+  .col-sm-5
+    = image_tag f.object.foto
+  .col-sm-4
+    = f.input_field :foto
+  .col-sm-1
+    = link_to_remove_association "-", f

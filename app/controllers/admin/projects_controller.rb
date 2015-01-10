@@ -17,7 +17,7 @@ class Admin::ProjectsController < AdminController
   def create
      @project = Project.new(project_params)
     if @project.save
-      redirect_to admin_projects_path, notice: "Dodano projekt"
+      redirect_to edit_admin_project_path(@project), notice: "Dodano projekt"
     else
       render action: "new"
     end
@@ -29,7 +29,7 @@ class Admin::ProjectsController < AdminController
 
   def update
     if @project.update_attributes(project_params)
-      redirect_to admin_projects_path, notice: "Projekt zapisany"
+      redirect_to edit_admin_project_path(@project), notice: "Projekt zapisany"
     else
       render action: "edit"
     end
@@ -50,7 +50,7 @@ class Admin::ProjectsController < AdminController
   end
 
   def project_params
-    params.require(:project).permit(:title, :keywords, :description, :what_i_did, :about, :content, :link, :image, :startup, :open_source, project_category_ids: [], project_tag_ids: [])
+    params.require(:project).permit(:title, :keywords, :description, :what_i_did, :about, :content, :link, :image, :startup, :open_source, project_category_ids: [], project_tag_ids: [], project_images_attributes: [:id, :foto, :_destroy])
   end
 
 end

@@ -32,9 +32,13 @@
     = f.label :image , class: "col-sm-2 control-label"
     .col-sm-10
       - if @project.id.present?
-        = image_tag @project.image
-        = @project.image
+        = image_tag @project.image, class: "img-responsive"
       = f.input_field :image , label: false, class: "form-control"
+  = f.simple_fields_for :project_images do |project_image|
+    = render 'project_image_fields', :f => project_image
+  .form-group.links
+    .col-sm-offset-2.col-sm-10
+      = link_to_add_association 'add image', f, :project_images
   .form-group
     %label.col-sm-2.control-label Kategorie 
     .col-sm-10

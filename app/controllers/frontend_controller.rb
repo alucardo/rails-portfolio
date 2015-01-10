@@ -18,6 +18,7 @@ class FrontendController < ApplicationController
   end
 
   def about
+    @tags = ProjectTag.all
   end
 
   protected 
