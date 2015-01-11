@@ -35,6 +35,7 @@ gem 'friendly_id'
 gem 'simple_form'
 gem "cocoon"
 gem 'carrierwave'
+gem 'rmagick', :require => 'RMagick'
 gem "select2-rails"
 gem 'noty-rails'
 gem 'ckeditor', github: 'galetahub/ckeditor'

@@ -19,3 +19,13 @@
 .sort-source li img {
     background: #fff;
 }
+
+.thumbnail {
+    /*height: 370px;*/
+    overflow: hidden;
+    padding: 0;
+}
+.thumbnail img{
+    margin: 1%;
+    width: 95%;
+}

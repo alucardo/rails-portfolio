@@ -26,27 +26,18 @@
         .owl-carousel.owl-theme.owl-carousel-init{"data-plugin-options" => "{\"items\": 1, \"autoHeight\": true}", :style => "display: block; opacity: 1;"}
           .owl-wrapper-outer.autoHeight{:style => "height: 376px;"}
             .owl-wrapper{:style => "width: 2160px; left: 0px; display: block;"}
-              .owl-item{:style => "width: 360px;"}
-                %div
-                  .thumbnail
-                    = image_tag @project.image, class: "img-responsive"
+              - if @project.project_images.count > 0
+                - @project.project_images.each do |image|
+                  .owl-item{:style => "width: 360px;"}
+                    %div
+                      .thumbnail
+                        = image_tag image.foto.thumb, class: "img-responsive"
+              - else
+                .owl-item{:style => "width: 360px;"}
+                  %div
+                    .thumbnail
+                      = image_tag @project.image, class: "img-responsive"
       .col-md-8
-        / .portfolio-info
-        /   .row
-        /     .col-md-12.center
-        /       %ul
-        /         %li
-        /           %a{"data-original-title" => "Like", :href => "#", :rel => "tooltip"}
-        /             %i.icon.icon-heart>
-        /             14
-        /         %li
-        /           %i.icon.icon-calendar
-        /           21 November 2013
-        /         %li
-        /           %i.icon.icon-tags
-        /           = succeed "," do
-        /             %a{:href => "#"} Brand
-        /           %a{:href => "#"} Design
         %h4
           Opis
           %strong Projektu
